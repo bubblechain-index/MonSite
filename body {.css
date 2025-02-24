@@ -12,6 +12,45 @@ header {
     text-align: center;
     padding: 20px;
 }
+/* Style du menu latéral */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #222;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #444;
+    padding-left: 10px;
+}
+
+/* Décaler le contenu pour ne pas être caché par la barre */
+body {
+    margin-left: 220px;
+    font-family: Arial, sans-serif;
+}
 
 nav {
     background-color: #333;
