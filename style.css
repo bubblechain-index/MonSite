@@ -1,30 +1,15 @@
-
-/* ✅ Correction du fond et positionnement optimal */
+/* Global Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-   
-    background: url('assets/bubblechain-logo.png') no-repeat center center fixed; /* Centre l'image tout en haut */
-    background-size: 85%; /* Permet de voir l’image entière sans qu’elle soit coupée */
+    background: url('assets/bubblechain-logo.png') no-repeat center center fixed;
+    background-size: cover;
     background-attachment: fixed;
-  background-position: center; /* Centre bien l’image */
+    background-position: center;
+}
 
-}
-@media screen and (max-width: 768px) {
-    body {
-        background-size: contain; /* Ajuste mieux l'image sur petits écrans */
-        background-position: top center;
-    }
-    @media screen and (max-width: 768px) {
-        .sidebar {
-            width: 200px;
-        }
-        .menu-toggle {
-            font-size: 20px;
-        }
-    }
-}
+/* Overlay to soften background image */
 body::before {
     content: "";
     position: fixed;
@@ -32,117 +17,49 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2); /* Surcouche semi-transparente pour rendre le fond moins visible */
-    backdrop-filter: blur(2px); /* Ajoute un léger effet flou */
-    z-index: -1; /* Place la surcouche derrière tout le contenu */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+    z-index: -1;
 }
+
+/* Responsive Image */
 .responsive-img {
-    max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de l'écran */
-    height: auto; /* Maintient les proportions */
-    display: block; /* Supprime les marges blanches */
-    margin: auto; /* Centre l'image */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
 }
-.content {
-    background: rgba(255, 255, 255, 0.8); /* Fond blanc avec transparence */
-    padding: 20px;
-    border-radius: 10px;
-    margin-left: 230px; /* Centre le bloc et évite qu'il touche le haut */
-    max-width: 80%; /* Limite la largeur pour un design plus propre */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Effet d’ombre doux */
-}
-/* ✅ Amélioration de la lisibilité du texte principal */
-.hero-text {
-    background: rgba(255, 255, 255, 0.85); /* Ajoute un fond blanc propre */
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 80%;
-    margin: 50px auto; /* Centre le bloc */
-    text-align: center;
-    font-size: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    line-height: 1.5;
-}
+
+/* Sidebar Navigation */
 .sidebar {
     position: fixed;
-    left: -250px;
+    left: -200px;
     top: 0;
-    width: 250px;
+    width: 200px;
     height: 100%;
-    background-color:#333;
+    background-color: #333;
     transition: left 0.3s ease-in-out;
     padding-top: 20px;
-}
-/* Affichage du menu quand il est actif */
-.sidebar.show {
-    left: 0; /* Le menu apparaît */
-}
-.language-switcher {
-    position: fixed;
-    top: 20px;
-    right: 20px;
     z-index: 1000;
-    font-size: 18px;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
 }
-
-.language-btn {
-    text-decoration: none;
-    color: #007bff;
-    padding: 5px 10px;
-    font-weight: bold;
-}
-
-.language-btn:hover {
-    color: white;
-    background-color: #007bff;
-    border-radius: 5px;
-}
-.language-switcher:hover {
-    background-color: rgba(255, 255, 255, 1);
-    transform: scale(1.05);
-}
-header {
-    background-color: rgba(30, 136, 229, 0.8); /* ✅ Rend l’en-tête semi-transparent */
-    text-align: center;
-    padding: 10px 0; /* ✅ Réduit la hauteur du titre */
-}
-/* Style du menu latéral */
-.sidebar {
-    position: fixed;
+.sidebar.show {
     left: 0;
-    top: 0;
-    width: 220px;
-    height: 100%;
-    background-color: background-color: rgba(34, 34, 34, 0.8);
-    padding-top: 60px;
-}
-h1 {
-    font-size: 28px; /* ✅ Réduit la taille du titre principal */
-    margin: 5px 0;
 }
 
-h2 {
-    font-size: 18px; /* ✅ Réduit la taille du sous-titre */
-    margin: 0;
-}
 .sidebar ul {
     list-style-type: none;
     padding: 0;
 }
 
 .sidebar ul li {
-    padding: 15px;
+    padding: 12px;
     text-align: left;
 }
 
 .sidebar ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     display: block;
     transition: 0.3s;
 }
@@ -151,102 +68,64 @@ h2 {
     background-color: #575757;
 }
 
-/* Décaler le contenu pour ne pas être caché par la barre */
-
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    background-color: #333;
-    padding: 10px 20px;
-    align-items: center;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-nav ul li {
-   padding: 10px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 8px 12px;
-}
-nav ul li a:hover {
-    background-color: #555;
-    border-radius: 5px;
-}
-main {
-    padding: 150px 20px 50px 20px; /* Ajoute un grand espace en haut pour éviter que le texte touche l’image */
-    text-align: center;
-}
-/* 📱 MENU RESPONSIVE pour mobile */
-@media screen and (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-    }
-
-    nav ul li {
-        width: 100%;
-        text-align: center;
-    }
-
-    nav ul li a {
-        display: block;
-        padding: 10px;
-    }
-}
-/* 📱 Bouton pour ouvrir le menu */
+/* Menu Toggle Button */
 .menu-toggle {
     position: fixed;
-    top: 20px;
+    top: 15px;
     left: 10px;
     background-color: #444;
     color: white;
     border: none;
-    font-size: 24px;
-    padding: 10px;
+    font-size: 22px;
+    padding: 8px;
     cursor: pointer;
     border-radius: 5px;
+    z-index: 1100;
 }
 
-section {
-    margin-bottom: 40px;
+/* Header */
+header {
+    background-color: rgba(30, 136, 229, 0.8);
+    text-align: center;
+    padding: 10px 0;
 }
-h2, h3 {
-    background: rgba(255, 255, 255, 0.8); /* Ajoute un fond clair derrière les titres */
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius: 5px;
+
+/* Content Styling */
+.content {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 15px;
+    border-radius: 10px;
+    margin-left: 220px;
+    max-width: 75%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 900;
 }
+
+/* Footer */
 footer {
     background-color: #222;
     color: white;
     text-align: center;
     padding: 10px;
-    position: relative; /* Permet au footer de s'adapter au contenu */
+    position: relative;
     bottom: 0;
     width: 100%;
-    margin-top: 50px; /* Ajoute un espace pour ne pas coller au texte */
+    margin-top: 50px;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("BubbleChain Index prêt !");
-});
-node_modules/
-*.log
-package-lock.json
-.DS_Store
+/* Responsive Fixes */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 180px;
+    }
+    .menu-toggle {
+        font-size: 20px;
+    }
+    .content {
+        margin-left: 0;
+        max-width: 90%;
+        padding: 10px;
+    }
+}
+
