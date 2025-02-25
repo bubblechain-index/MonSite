@@ -6,7 +6,7 @@ body {
     font-family: Arial, sans-serif;
    
     background: url('assets/bubblechain-logo.png') no-repeat center center fixed; /* Centre l'image tout en haut */
-    background-size: cover; /* Permet de voir l’image entière sans qu’elle soit coupée */
+    background-size: 85%; /* Permet de voir l’image entière sans qu’elle soit coupée */
     background-attachment: fixed;
   background-position: center; /* Centre bien l’image */
 
@@ -19,8 +19,8 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.4); /* Surcouche semi-transparente pour rendre le fond moins visible */
-    backdrop-filter: blur(5px); /* Ajoute un léger effet flou */
+    background: rgba(255, 255, 255, 0.2); /* Surcouche semi-transparente pour rendre le fond moins visible */
+    backdrop-filter: blur(2px); /* Ajoute un léger effet flou */
     z-index: -1; /* Place la surcouche derrière tout le contenu */
 }
 
