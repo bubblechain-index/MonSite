@@ -11,7 +11,12 @@ body {
   background-position: center; /* Centre bien l’image */
 
 }
-
+@media screen and (max-width: 768px) {
+    body {
+        background-size: contain; /* Ajuste mieux l'image sur petits écrans */
+        background-position: top center;
+    }
+}
 body::before {
     content: "";
     position: fixed;
@@ -23,7 +28,12 @@ body::before {
     backdrop-filter: blur(2px); /* Ajoute un léger effet flou */
     z-index: -1; /* Place la surcouche derrière tout le contenu */
 }
-
+.responsive-img {
+    max-width: 100%; /* Assure que l'image ne dépasse pas la largeur de l'écran */
+    height: auto; /* Maintient les proportions */
+    display: block; /* Supprime les marges blanches */
+    margin: auto; /* Centre l'image */
+}
 .content {
     background: rgba(255, 255, 255, 0.8); /* Fond blanc avec transparence */
     padding: 20px;
