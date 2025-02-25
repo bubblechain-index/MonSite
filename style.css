@@ -1,29 +1,16 @@
-🚀 Correction complète du positionnement de l’image + Organisation du texte
-Je vais corriger non seulement le flou, mais surtout le placement de l’image et du texte pour que tout soit bien aligné et lisible 📌
 
-🔹 Problèmes actuels :
-L’image de fond est trop grande et chevauche le texte ❌
-Le texte n’a pas de cadre fixe, donc il flotte au mauvais endroit ❌
-Les sections ne sont pas bien espacées ❌
-✅ 1. Correction de l’image de fond
-💡 But : L’image ne doit plus couvrir le texte, elle doit être centrée et bien ajustée
-
-Dans style.css, remplace TON ANCIEN CSS du body par ceci :
-
-css
-Copier
 /* ✅ Correction du fond et positionnement optimal */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    margin-left: 220px; /* Pour éviter que la sidebar cache le contenu */
-    
+   
     background: url('assets/bubblechain-logo.png') no-repeat center top; /* Centre l'image tout en haut */
-    background-size: contain; /* Permet de voir l’image entière sans qu’elle soit coupée */
+    background-size: cover; /* Permet de voir l’image entière sans qu’elle soit coupée */
     background-attachment: fixed;
     background-color: #f4f4f4; /* Assure un fond propre */
-    color: #333;
+    background-position: center; /* Centre bien l’image */
+
 }
 
 body::before {
@@ -58,11 +45,16 @@ body::before {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     line-height: 1.5;
 }
-
 .sidebar {
-    width: 220px; /* Légèrement plus large */
-    padding-top: 50px; /* Décale le menu pour ne pas couper l’image */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background-color: rgba(34, 34, 34, 0.8); /* ✅ Rend le menu semi-transparent */
+    padding-top: 60px;
 }
+
 .language-switcher {
     position: fixed;
     top: 20px;
@@ -93,10 +85,9 @@ body::before {
     transform: scale(1.05);
 }
 header {
-    background-color: #1e88e5;
-    color: white;
+    background-color: rgba(30, 136, 229, 0.8); /* ✅ Rend l’en-tête semi-transparent */
     text-align: center;
-    padding: 20px;
+    padding: 10px; /* ✅ Réduit la hauteur du titre */
 }
 /* Style du menu latéral */
 .sidebar {
@@ -108,7 +99,15 @@ header {
     background-color: #222;
     padding-top: 60px;
 }
+h1 {
+    font-size: 28px; /* ✅ Réduit la taille du titre principal */
+    margin: 5px 0;
+}
 
+h2 {
+    font-size: 18px; /* ✅ Réduit la taille du sous-titre */
+    margin: 0;
+}
 .sidebar ul {
     list-style-type: none;
     padding: 0;
