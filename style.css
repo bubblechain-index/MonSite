@@ -27,7 +27,7 @@ body::before {
 }
 
 .header-logo img {
-    width: 100px;
+    width: 80px;
     height: auto;
 }
 
@@ -145,5 +145,9 @@ footer {
         max-width: 90%;
         padding: 15px;
     }
+}
+.header-logo img {
+    width: 60px; /* Smaller size for mobile */
+}
 }
 
