@@ -16,6 +16,14 @@ body {
         background-size: contain; /* Ajuste mieux l'image sur petits écrans */
         background-position: top center;
     }
+    @media screen and (max-width: 768px) {
+        .sidebar {
+            width: 200px;
+        }
+        .menu-toggle {
+            font-size: 20px;
+        }
+    }
 }
 body::before {
     content: "";
@@ -56,14 +64,18 @@ body::before {
 }
 .sidebar {
     position: fixed;
-    left: 0;
+    left: -250px;
     top: 0;
-    width: 220px;
+    width: 250px;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* ✅ Menu noir semi-transparent */
+    background-color:#333;
+    transition: left 0.3s ease-in-out;
     padding-top: 20px;
 }
-
+/* Affichage du menu quand il est actif */
+.sidebar.show {
+    left: 0; /* Le menu apparaît */
+}
 .language-switcher {
     position: fixed;
     top: 20px;
@@ -131,15 +143,12 @@ h2 {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    display: flex;
-    align-items: center; /* Aligne bien les icônes avec le texte */
-    gap: 10px; /* Ajoute un petit espace entre l'icône et le texte */
+    display: block;
     transition: 0.3s;
 }
 
 .sidebar ul li a:hover {
-    background-color: #444;
-    padding-left: 15px;
+    background-color: #575757;
 }
 
 /* Décaler le contenu pour ne pas être caché par la barre */
@@ -200,6 +209,20 @@ main {
         padding: 10px;
     }
 }
+/* 📱 Bouton pour ouvrir le menu */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    background-color: #444;
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 section {
     margin-bottom: 40px;
 }
