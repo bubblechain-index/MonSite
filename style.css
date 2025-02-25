@@ -21,15 +21,6 @@ body::before {
     backdrop-filter: blur(3px);
     z-index: -1;
 }
-.header-logo {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.header-logo img {
-    width: 80px;
-    height: auto;
-}
 
 /* Sidebar Navigation */
 .sidebar {
@@ -75,7 +66,7 @@ body::before {
     background-color: #575757;
 }
 
-/* Menu Toggle Button */
+/* Menu Toggle Button - Correction de l'affichage et de la priorité */
 .menu-toggle {
     position: fixed;
     top: 15px;
@@ -87,7 +78,13 @@ body::before {
     padding: 8px;
     cursor: pointer;
     border-radius: 5px;
-    z-index: 1100;
+    z-index: 1101; /* Assure qu'il est bien au-dessus de tout */
+    display: block;
+}
+
+/* Suppression des doublons du bouton menu */
+.menu-toggle.hidden {
+    display: none;
 }
 
 /* Header */
@@ -95,6 +92,17 @@ header {
     background-color: rgba(30, 136, 229, 0.8);
     text-align: center;
     padding: 10px 0;
+}
+
+/* Header Logo */
+.header-logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.header-logo img {
+    width: 80px; /* Adjusted size for smaller logo */
+    height: auto;
 }
 
 /* Content Styling */
@@ -145,9 +153,8 @@ footer {
         max-width: 90%;
         padding: 15px;
     }
-}
-.header-logo img {
-    width: 60px; /* Smaller size for mobile */
-}
+    .header-logo img {
+        width: 60px; /* Smaller size for mobile */
+    }
 }
 
