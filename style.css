@@ -8,8 +8,7 @@ body {
     background: url('assets/bubblechain-logo.png') no-repeat center center fixed; /* Centre l'image tout en haut */
     background-size: cover; /* Permet de voir l’image entière sans qu’elle soit coupée */
     background-attachment: fixed;
-    background-color: #f4f4f4; /* Assure un fond propre */
-    background-position: center; /* Centre bien l’image */
+  background-position: center; /* Centre bien l’image */
 
 }
 
@@ -35,11 +34,11 @@ body::before {
 }
 /* ✅ Amélioration de la lisibilité du texte principal */
 .hero-text {
-    background: rgba(255, 255, 255, 0.95); /* Ajoute un fond blanc propre */
+    background: rgba(255, 255, 255, 0.85); /* Ajoute un fond blanc propre */
     padding: 20px;
     border-radius: 10px;
     max-width: 80%;
-    margin: 0 auto; /* Centre le bloc */
+    margin: 50px auto; /* Centre le bloc */
     text-align: center;
     font-size: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -51,8 +50,8 @@ body::before {
     top: 0;
     width: 220px;
     height: 100%;
-    background-color: rgba(34, 34, 34, 0.8); /* ✅ Rend le menu semi-transparent */
-    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0.7); /* ✅ Menu noir semi-transparent */
+    padding-top: 20px;
 }
 
 .language-switcher {
@@ -87,7 +86,7 @@ body::before {
 header {
     background-color: rgba(30, 136, 229, 0.8); /* ✅ Rend l’en-tête semi-transparent */
     text-align: center;
-    padding: 10px; /* ✅ Réduit la hauteur du titre */
+    padding: 10px 0; /* ✅ Réduit la hauteur du titre */
 }
 /* Style du menu latéral */
 .sidebar {
