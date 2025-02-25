@@ -1,15 +1,31 @@
+🚀 Correction complète du positionnement de l’image + Organisation du texte
+Je vais corriger non seulement le flou, mais surtout le placement de l’image et du texte pour que tout soit bien aligné et lisible 📌
+
+🔹 Problèmes actuels :
+L’image de fond est trop grande et chevauche le texte ❌
+Le texte n’a pas de cadre fixe, donc il flotte au mauvais endroit ❌
+Les sections ne sont pas bien espacées ❌
+✅ 1. Correction de l’image de fond
+💡 But : L’image ne doit plus couvrir le texte, elle doit être centrée et bien ajustée
+
+Dans style.css, remplace TON ANCIEN CSS du body par ceci :
+
+css
+Copier
+/* ✅ Correction du fond et positionnement optimal */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    margin-left: 220px; /* Pour éviter que le contenu soit sous la sidebar */
-   
-    background: url('assets/bubblechain-logo.png') no-repeat center center fixed;
-    background-size: contain; /* Change de cover à contain pour voir tout le logo */
-    background-attachment: fixed; /* Fixe le fond pour éviter les coupures */
-    background-color: #f4f4f4; /* Ajoute une couleur de fond en cas d’espace vide */
+    margin-left: 220px; /* Pour éviter que la sidebar cache le contenu */
+    
+    background: url('assets/bubblechain-logo.png') no-repeat center top; /* Centre l'image tout en haut */
+    background-size: contain; /* Permet de voir l’image entière sans qu’elle soit coupée */
+    background-attachment: fixed;
+    background-color: #f4f4f4; /* Assure un fond propre */
     color: #333;
 }
+
 body::before {
     content: "";
     position: fixed;
@@ -30,16 +46,17 @@ body::before {
     max-width: 80%; /* Limite la largeur pour un design plus propre */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Effet d’ombre doux */
 }
+/* ✅ Amélioration de la lisibilité du texte principal */
 .hero-text {
-    background: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
-    padding: 20px; /* Ajoute un espace autour du texte */
-    border-radius: 10px; /* Coins arrondis pour un design plus moderne */
-    max-width: 80%; /* Limite la largeur pour éviter un texte trop étalé */
-    margin: 30px auto; /* Centre le bloc horizontalement et ajoute un espace */
-    text-align: center; /* Centre le texte */
-    font-size: 20px; /* Rend le texte plus lisible */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Effet d’ombre doux */
-    line-height: 1.5; /* Améliore l’espacement entre les lignes */
+    background: rgba(255, 255, 255, 0.95); /* Ajoute un fond blanc propre */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 0 auto; /* Centre le bloc */
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.5;
 }
 
 .sidebar {
@@ -143,7 +160,7 @@ nav ul li a {
 }
 
 main {
-    padding: 50px;
+    padding: 150px 20px 50px 20px; /* Ajoute un grand espace en haut pour éviter que le texte touche l’image */
     text-align: center;
 }
 
@@ -161,10 +178,12 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: relative;
+    position: relative; /* Permet au footer de s'adapter au contenu */
     bottom: 0;
     width: 100%;
+    margin-top: 50px; /* Ajoute un espace pour ne pas coller au texte */
 }
+
 document.addEventListener("DOMContentLoaded", function () {
     console.log("BubbleChain Index prêt !");
 });
