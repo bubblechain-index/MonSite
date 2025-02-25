@@ -1,9 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    margin-left: 220px; /* Pour éviter que le contenu soit sous la sidebar */
     background: url('assets/bubblechain-logo.png') no-repeat center center fixed;
-    background-size: cover; /* Change de cover à contain pour voir tout le logo */
+    background-size: contain; /* Change de cover à contain pour voir tout le logo */
     background-attachment: fixed; /* Fixe le fond pour éviter les coupures */
     background-color: #f4f4f4; /* Ajoute une couleur de fond en cas d’espace vide */
 }
@@ -18,9 +19,15 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Effet d’ombre doux */
 }
 .hero-text {
-    background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent */
-    padding: 15px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.85); /* Fond blanc semi-transparent */
+    padding: 20px; /* Ajoute un espace autour du texte */
+    border-radius: 10px; /* Coins arrondis pour un design plus moderne */
+    max-width: 80%; /* Limite la largeur pour éviter un texte trop étalé */
+    margin: 30px auto; /* Centre le bloc horizontalement et ajoute un espace */
+    text-align: center; /* Centre le texte */
+    font-size: 20px; /* Rend le texte plus lisible */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Effet d’ombre doux */
+    line-height: 1.5; /* Améliore l’espacement entre les lignes */
 }
 
 .sidebar {
