@@ -1,19 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("BubbleChain Index prêt !");
+    console.log("BubbleChain Index ready!");
     
-    // Sélectionne le bouton et la sidebar
+    // Select the menu button and sidebar
     const menuToggle = document.querySelector(".menu-toggle");
     const sidebar = document.getElementById("sidebar");
+    
+    if (menuToggle && sidebar) {
+        // Toggle menu visibility on button click
+        menuToggle.addEventListener("click", function (event) {
+            event.stopPropagation(); // Prevent immediate closing
+            sidebar.classList.toggle("show");
+        });
 
-    // Ajoute un événement au bouton pour ouvrir/fermer le menu
-    menuToggle.addEventListener("click", function () {
-        sidebar.classList.toggle("show");
-    });
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+            if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+                sidebar.classList.remove("show");
+            }
+        });
 
-    // Fermer le menu si on clique ailleurs (optionnel)
-    document.addEventListener("click", function (event) {
-        if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
-            sidebar.classList.remove("show");
-        }
-    });
+        // Prevent closing when clicking inside the menu
+        sidebar.addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
+    } else {
+        console.warn("Menu not found on this page.");
+    }
 });

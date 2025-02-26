@@ -25,9 +25,9 @@ body::before {
 /* Sidebar Navigation */
 .sidebar {
     position: fixed;
-    left: -200px;
+    left: -220px;
     top: 0;
-    width: 200px;
+    width: 220px;
     height: 100%;
     background-color: #333;
     transition: left 0.3s ease-in-out;
@@ -66,7 +66,7 @@ body::before {
     background-color: #575757;
 }
 
-/* Menu Toggle Button - Correction de l'affichage et de la priorité */
+/* Menu Toggle Button */
 .menu-toggle {
     position: fixed;
     top: 15px;
@@ -78,13 +78,7 @@ body::before {
     padding: 8px;
     cursor: pointer;
     border-radius: 5px;
-    z-index: 1101; /* Assure qu'il est bien au-dessus de tout */
-    display: block;
-}
-
-/* Suppression des doublons du bouton menu */
-.menu-toggle.hidden {
-    display: none;
+    z-index: 1101;
 }
 
 /* Header */
@@ -101,18 +95,17 @@ header {
 }
 
 .header-logo img {
-    width: 80px; /* Adjusted size for smaller logo */
+    width: 70px;
     height: auto;
 }
 
 /* Content Styling */
 .content {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
     border-radius: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 75%;
+    margin: 20px auto;
+    max-width: 80%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 900;
@@ -121,12 +114,12 @@ header {
 
 /* Bubble Box Styling for Text Sections */
 .bubble-box {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 25px;
+    background: rgba(255, 255, 255, 0.97);
+    padding: 30px;
     border-radius: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    margin: 20px auto;
+    margin: 30px auto;
 }
 
 /* Footer */
@@ -134,7 +127,7 @@ footer {
     background-color: #222;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 12px;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -144,17 +137,16 @@ footer {
 /* Responsive Fixes */
 @media screen and (max-width: 768px) {
     .sidebar {
-        width: 180px;
+        width: 200px;
     }
     .menu-toggle {
         font-size: 20px;
     }
     .content {
         max-width: 90%;
-        padding: 15px;
+        padding: 20px;
     }
     .header-logo img {
-        width: 60px; /* Smaller size for mobile */
+        width: 60px;
     }
 }
-
