@@ -158,3 +158,11 @@ footer {
     padding: 15px;
     margin-top: 20px;
 }
+.graphique {
+    width: 400px; /* Largeur de l'image */
+    border: 2px solid #333; /* Bordure noire */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Ombre */
+    display: block;
+    margin: 20px auto; /* Centrage horizontal */
+}
