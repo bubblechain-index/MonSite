@@ -166,3 +166,10 @@ footer {
     display: block;
     margin: 20px auto; /* Centrage horizontal */
 }
+.image-container {
+    text-align: center;
+}
+.image-container img {
+    display: block;
+    margin: auto;
+}
