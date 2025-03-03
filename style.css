@@ -6,17 +6,17 @@ body {
     background: url('assets/bubblechain-logo.png') no-repeat center center fixed;
     background-size: cover;
     color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombre pour lisibilité */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 /* 📌 Navigation Menu */
 nav {
-    background-color: rgba(0, 77, 153, 0.9); /* Fond bleu semi-transparent */
+    background-color: rgba(0, 77, 153, 0.9);
     padding: 15px;
-    text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /* 📌 Petit logo dans le menu */
@@ -24,12 +24,11 @@ nav {
     width: 50px;
     height: auto;
     margin-right: 15px;
-    vertical-align: middle;
 }
 
 /* 📌 Alignement des éléments du menu */
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     display: flex;
     align-items: center;
@@ -70,7 +69,7 @@ nav ul li a:hover {
 header {
     text-align: center;
     padding: 40px 20px;
-    background: rgba(230, 242, 255, 0.8); /* Fond semi-transparent pour lisibilité */
+    background: rgba(230, 242, 255, 0.8);
     border-radius: 8px;
 }
 
@@ -80,13 +79,14 @@ header h1, h2, h3 {
 
 /* 📋 Main Content */
 main {
-    width: 80%;
+    max-width: 90%;
+    width: 800px;
     margin: auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.9); /* Fond semi-transparent */
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #333; /* Texte foncé pour contraste */
+    color: #333;
     text-shadow: none;
 }
 
@@ -158,18 +158,77 @@ footer {
     padding: 15px;
     margin-top: 20px;
 }
+
+/* 📊 Images et Graphiques */
 .graphique {
-    width: 400px; /* Largeur de l'image */
-    border: 2px solid #333; /* Bordure noire */
-    border-radius: 10px; /* Coins arrondis */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Ombre */
+    max-width: 100%;
+    width: 400px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     display: block;
-    margin: 20px auto; /* Centrage horizontal */
+    margin: 20px auto;
 }
+
 .image-container {
     text-align: center;
 }
+
 .image-container img {
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: auto;
+}
+
+/* 📱 Responsive Design */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-logo {
+        margin-bottom: 10px;
+    }
+
+    main {
+        width: 95%;
+    }
+
+    .graphique {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        padding: 10px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    header {
+        padding: 30px 15px;
+    }
+
+    main {
+        width: 100%;
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
 }
