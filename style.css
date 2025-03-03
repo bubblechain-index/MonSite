@@ -200,7 +200,14 @@ footer {
     .menu-logo {
         margin-bottom: 10px;
     }
-
+    .fixed-logo {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        width: 60px; /* Ajuste selon la taille désirée */
+        height: auto;
+        z-index: 1000; /* S'assurer qu'il reste au-dessus du reste du contenu */
+    }
     main {
         width: 95%;
     }
