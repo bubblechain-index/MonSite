@@ -6,7 +6,7 @@ body {
     background: url('assets/bubblechain-logo.png') no-repeat center center fixed;
     background-size: cover;
     color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Ombre légère */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* 📌 Logo Fixe */
@@ -24,36 +24,44 @@ nav {
     background-color: rgba(0, 77, 153, 0.9);
     padding: 15px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column; /* Centrage vertical */
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
 }
 
 /* 📌 Logo du menu */
 .menu-logo {
-    width: 50px;
+    display: block;
+    margin: 0 auto;
+    width: 60px;
     height: auto;
-    margin-right: 15px;
 }
 
 /* 📌 Menu */
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    align-items: center;
     margin: 0;
+    display: flex;
+    flex-direction: column; /* Menu en colonne */
+    align-items: center;
+    width: 100%;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
+    display: block;
+    padding: 10px;
 }
 
 nav ul li a:hover {
@@ -62,7 +70,7 @@ nav ul li a:hover {
 
 /* 🌍 Language Switch */
 .language-switch {
-    margin-right: 20px;
+    margin-top: 10px;
 }
 
 .language-switch a {
@@ -78,7 +86,7 @@ nav ul li a:hover {
 /* 📌 Header */
 header {
     text-align: center;
-    padding: 40px 20px;
+    padding: 30px 20px;
     background: rgba(230, 242, 255, 0.8);
     border-radius: 8px;
 }
